@@ -1,0 +1,213 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 234881024 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3466), pid=1912, tid=1460
+#
+# JRE version:  (16.0.1+9) (build )
+# Java VM: OpenJDK 64-Bit Server VM (16.0.1+9-24, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=windows-1251 -Duser.country=RU -Duser.language=ru -Duser.variant ru.javabegin.micro.demo.eurekaclient.EurekaClientApplication
+
+Host: AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  , 8 cores, 13G,  Windows 10 , 64 bit Build 19041 (10.0.19041.1889)
+Time: Sun Mar 26 17:29:42 2023 RTZ 2 (s 10 , 64 bit Build 19041 (10.0.19041.1889) elapsed time: 0.022741 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000021e8342eb80):  JavaThread "Unknown thread" [_thread_in_vm, id=1460, stack(0x000000e349200000,0x000000e349300000)]
+
+Stack: [0x000000e349200000,0x000000e349300000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6687ca]
+V  [jvm.dll+0x7ca3c9]
+V  [jvm.dll+0x7cbb53]
+V  [jvm.dll+0x7cc1b3]
+V  [jvm.dll+0x242ea5]
+V  [jvm.dll+0x665589]
+V  [jvm.dll+0x65a175]
+V  [jvm.dll+0x2fc5ab]
+V  [jvm.dll+0x3037a6]
+V  [jvm.dll+0x352fee]
+V  [jvm.dll+0x35321f]
+V  [jvm.dll+0x2d3618]
+V  [jvm.dll+0x2d4854]
+V  [jvm.dll+0x79ccb1]
+V  [jvm.dll+0x360de1]
+V  [jvm.dll+0x77a990]
+V  [jvm.dll+0x3e55af]
+V  [jvm.dll+0x3e7081]
+C  [jli.dll+0x52fb]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17034]
+C  [ntdll.dll+0x526a1]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ff93cb4cbb8, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x0000021e8347afb0 GCTaskThread "GC Thread#0" [stack: 0x000000e349300000,0x000000e349400000] [id=11848]
+  0x0000021e83489da0 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000e349400000,0x000000e349500000] [id=11408]
+  0x0000021e8348ae50 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000e349500000,0x000000e349600000] [id=9912]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff93c3244d7]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x0000021e8342ad30] Heap_lock - owner thread: 0x0000021e8342eb80
+
+Heap address: 0x0000000720e00000, size: 3570 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000720e00000, 0x0000000800000000)
+  region size 2048K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff93c7024ed]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (1 events):
+Event: 0.012 Loaded shared library C:\Users\KVlad\.jdks\openjdk-16.0.1\bin\java.dll
+
+
+Dynamic libraries:
+0x00007ff691810000 - 0x00007ff69181e000 	C:\Users\KVlad\.jdks\openjdk-16.0.1\bin\java.exe
+0x00007ff98beb0000 - 0x00007ff98c0a8000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff98bd10000 - 0x00007ff98bdcd000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff989780000 - 0x00007ff989a52000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff9895c0000 - 0x00007ff9896c0000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff9811f0000 - 0x00007ff981209000 	C:\Users\KVlad\.jdks\openjdk-16.0.1\bin\VCRUNTIME140.dll
+0x00007ff9811d0000 - 0x00007ff9811e8000 	C:\Users\KVlad\.jdks\openjdk-16.0.1\bin\jli.dll
+0x00007ff98abd0000 - 0x00007ff98ad6d000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff975f70000 - 0x00007ff97620a000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ff989ee0000 - 0x00007ff989f02000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff98bdd0000 - 0x00007ff98be6e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff98af40000 - 0x00007ff98af6b000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff989b50000 - 0x00007ff989c5f000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff989a60000 - 0x00007ff989afd000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff98ad70000 - 0x00007ff98ada0000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ff985030000 - 0x00007ff98503c000 	C:\Users\KVlad\.jdks\openjdk-16.0.1\bin\vcruntime140_1.dll
+0x00007ff964080000 - 0x00007ff964111000 	C:\Users\KVlad\.jdks\openjdk-16.0.1\bin\msvcp140.dll
+0x00007ff93c040000 - 0x00007ff93cbeb000 	C:\Users\KVlad\.jdks\openjdk-16.0.1\bin\server\jvm.dll
+0x00007ff98a9f0000 - 0x00007ff98aa9e000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff98a800000 - 0x00007ff98a89c000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff98aff0000 - 0x00007ff98b115000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff989fd0000 - 0x00007ff989fd8000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ff97f3e0000 - 0x00007ff97f407000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff9788e0000 - 0x00007ff9788e9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ff97f410000 - 0x00007ff97f41a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff98a980000 - 0x00007ff98a9eb000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff987440000 - 0x00007ff987452000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ff9811c0000 - 0x00007ff9811ca000 	C:\Users\KVlad\.jdks\openjdk-16.0.1\bin\jimage.dll
+0x00007ff97c510000 - 0x00007ff97c6f4000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ff96f690000 - 0x00007ff96f6bc000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ff9896c0000 - 0x00007ff989742000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff977030000 - 0x00007ff977055000 	C:\Users\KVlad\.jdks\openjdk-16.0.1\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\KVlad\.jdks\openjdk-16.0.1\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e;C:\Users\KVlad\.jdks\openjdk-16.0.1\bin\server
+
+VM Arguments:
+jvm_args: -Dfile.encoding=windows-1251 -Duser.country=RU -Duser.language=ru -Duser.variant 
+java_command: ru.javabegin.micro.demo.eurekaclient.EurekaClientApplication
+java_class_path (initial): C:\Users\KVlad\Desktop\Java\spring-microservices-demo\eureka-client\build\classes\java\main;C:\Users\KVlad\Desktop\Java\spring-microservices-demo\eureka-client\build\resources\main;C:\Users\KVlad\.gradle\caches\modules-2\files-2.1\org.springframework.cloud\spring-cloud-starter-netflix-eureka-client\3.1.0\d5d060a9f0aead60cedf4ac92c4f951f9e8730f4\spring-cloud-starter-netflix-eureka-client-3.1.0.jar;C:\Users\KVlad\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-web\2.6.2\685b236afc0144a52383cd2c52731dd016f9badd\spring-boot-starter-web-2.6.2.jar;C:\Users\KVlad\.gradle\caches\modules-2\files-2.1\org.springframework.cloud\spring-cloud-starter-loadbalancer\3.1.0\e7a788be5717f2f0186eff15c8043f5cb93334c2\spring-cloud-starter-loadbalancer-3.1.0.jar;C:\Users\KVlad\.gradle\caches\modules-2\files-2.1\org.springframework.cloud\spring-cloud-starter\3.1.0\bf0cac2a2a05ce8f703deec9f565dc172c682a9d\spring-cloud-starter-3.1.0.jar;C:\Users\KVlad\.gradle\caches\modules-2\files-2.1\org.springframework.cloud\spring-cloud-netflix-eureka-client\3.1.0\45950bf13b244fe1d23e84c4971498825ffb021b\spring-cloud-netflix-eureka-client-3.1.0.jar;C:\Users\KVlad\.gradle\caches\modules-2\files-2.1\com.netflix.eureka\eureka-core\1.10.17\32d9b4257c0e6939039ab52c3290f48d4d4b20d6\eureka-core-1.10.17.jar;C:\Users\KVlad\.gradle\caches\modules-2\files-2.1\com.netflix.eureka\eureka-client\1.10.17\2d36e9f177970ae70d86aa756a842e3ad9bcabd3\eureka-client-1.10.17.jar;C:\Users\KVlad\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-json\2.6.2\c0d457ff259c487521706fd2efac75d61595d527\spring-boot-starter-json-2.6.2.jar;C:\Users\KVlad\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-cache\2.6.2\c022733356e1598515da884bafc074b67280a9ae\spring-boot-starter-cache-2.6.2.jar;C:\Users\KVlad\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter\2.6.2\c36f1f6886cdbedc5347fdea62b97b44b
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 234881024                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 3743416320                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 3743416320                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Zulu\zulu-11\
+PATH=C:\Program Files\Zulu\zulu-11\bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk-14.0.2\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Git\cmd;C:\Program Files\apache-maven-3.6.3\bin;C:\zookeeper-3.7.0\bin;;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\WINDOWS\System32\OpenSSH\;C:\Users\KVlad\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.1\bin;;C:\Program Files\JetBrains\IntelliJ IDEA 2021.1.2\bin;
+USERNAME=KVlad
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.1889)
+OS uptime: 14 days 20:18 hours
+Hyper-V role detected
+
+CPU: total 8 (initial active 8) (8 cores per cpu, 2 threads per core) family 23 model 24 stepping 1 microcode 0x0, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4a, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt, hv
+
+Memory: 4k page, system-wide physical 14274M (2589M free)
+TotalPageFile size 14274M (AvailPageFile size 219M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 60M, peak: 284M
+
+vm_info: OpenJDK 64-Bit Server VM (16.0.1+9-24) for windows-amd64 JRE (16.0.1+9-24), built on Mar 26 2021 19:30:07 by "mach5one" with MS VC++ 16.7 (VS2019)
+
+END.
